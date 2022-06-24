@@ -4980,6 +4980,20 @@ __webpack_require__.r(__webpack_exports__);
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].start();
+var text = document.getElementById('bienvenue');
+var splitText = text.innerText.split('');
+text.innerHTML = '';
+var i = 0;
+setInterval(function () {
+  AjoutDeLettre();
+}, 40);
+
+function AjoutDeLettre() {
+  if (i < splitText.length) {
+    text.innerHTML += splitText[i];
+    i++;
+  }
+}
 
 /***/ }),
 

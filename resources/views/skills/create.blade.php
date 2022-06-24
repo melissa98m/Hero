@@ -3,11 +3,11 @@
 @section('content')
     <div class="container py-5">
         <div class="row">
-            <div class="col-lg-7 mx-auto">
-                <div class="bg-white rounded-lg shadow-sm p-5">
+            <div class="">
+                <div class="bg-secondary text-light rounded-lg shadow-sm p-5">
                     <div class="tab-content">
                         <div id="nav-tab-card" class="tab-pane fade show active">
-                            <h3> Ajouter un skill </h3>
+                            <h2 class="text-center"><strong> Ajouter un skill </strong></h2>
                             <!-- Message d'information -->
                             @if ($errors->any())
                                 <div class="alert alert-danger">

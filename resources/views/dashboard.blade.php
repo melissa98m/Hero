@@ -1,18 +1,20 @@
+@extends('layout')
+
+@section('content')
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl  leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    Vous étez connecté
-                </div>
+    <div class="">
+
+        <div class="">
+            <div class="bg-dark  shadow-sm rounded-lg">
+
                 <div>
-                    <a href="{{ route('heroes.index') }}" >Voir les héros</a>
+                    <a href="{{ route('heroes.index') }}" class="btn btn-primary">Voir les héros</a>
                     <a href="{{ route('skills.index') }}" >Voir les skills</a>
                     <a href="{{ route('universes.index') }}" >Voir les univers</a>
                 </div>
@@ -20,3 +22,4 @@
         </div>
     </div>
 </x-app-layout>
+@endsection

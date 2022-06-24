@@ -3,11 +3,11 @@
 @section('content')
     <div class="container py-5">
         <div class="row">
-            <div class="col-lg-7 mx-auto">
-                <div class="bg-white rounded-lg shadow-sm p-5">
+            <div class="">
+                <div class="bg-secondary text-light rounded-lg shadow-sm p-5">
                     <div class="tab-content">
                         <div id="nav-tab-card" class="tab-pane fade show active">
-                            <h3> Ajouter un Hero</h3>
+                            <h2 class="text-center"><strong>Ajouter un Héro</strong></h2>
                             <!-- Message d'information -->
                             @if ($errors->any())
                                 <div class="alert alert-danger">
@@ -51,8 +51,8 @@
                                         </div>
                                 </div>
                                 <label class="label">Skill</label>
-                                <div class="select">
-                                        <select name="skill_id">
+                                <div class="">
+                                        <select name="skill_id" class="text-dark">
                                             @foreach($skills as $skill)
                                                 <option value="{{ $skill->id }}">{{ $skill->skill_name }}</option>
                                             @endforeach
@@ -67,7 +67,7 @@
                                         </select>
                                     </div>
 
-                                <button type="submit" class="btn btn-primary rounded">Créer un hero</button>
+                                <button type="submit" class="btn btn-primary rounded m-2">Créer un hero</button>
                             </form>
                             <!-- Fin du formulaire -->
                         </div>

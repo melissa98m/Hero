@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+
+    background: #000;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(14, 15, 22);
+
+}
+.container{
+    max-width: 800px;
+    padding:30px;
+    margin: auto;
+}
+#bienvenue{
+    font-size: 15px;
+    text-transform: uppercase;
+}
+#bienvenue:after{
+    content: "";
+    animation: clignote 0.7s infinite linear;
+    width: 2px;
+    height: 15px;
+    display: inline-block;
+    background: rgb(14, 15, 22);;
+}
+@keyframes clignote {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+
+

@@ -1,13 +1,13 @@
 @extends('layout')
 
 @section('content')
-    <div class="container py-5">
+    <div class="">
         <div class="row">
-            <div class="col-lg-7 mx-auto">
-                <div class="bg-white rounded-lg shadow-sm p-5">
+            <div class="">
+                <div class="bg-secondary text-light rounded-lg shadow-sm p-5">
                     <div class="tab-content">
                         <div id="nav-tab-card" class="tab-pane fade show active">
-                            <h3>Modifier un Héro</h3>
+                            <h2 class="text-center"><strong>Modifier un Héro</strong></h2>
                             <!-- Message d'information -->
                             @if ($errors->any())
                                 <div class="alert alert-danger">
@@ -43,7 +43,6 @@
                                     <input type="text" name="description" class="form-control" width="200px" value="{{ $hero->description }}">
                                 </div>
                                 <div class=" col-sm-6">
-                                    <div class=" col-sm-6">
                                         <div class="form-group mb-4">
                                             <label>Photo</label>
                                             <input type="file"
@@ -51,11 +50,10 @@
                                                    class="form-control"
                                                    value="{{ $hero->photo }}"
                                             >
-                                        </div>
                                     </div>
                                 </div>
                                 <label class="label">Skill</label>
-                                <div class="select">
+                                <div class="select text-dark">
                                     <select name="skill_id" value="{{ $hero->skill->skill_name }}">
                                         @foreach($skills as $skill)
                                             <option value="{{ $skill->id }}">{{ $skill->skill_name }}</option>
@@ -71,7 +69,7 @@
                                     </select>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary rounded">Modifier le héro</button>
+                                <button type="submit" class="btn btn-primary rounded m-2">Modifier le héro</button>
                             </form>
                             <!-- Fin du formulaire -->
                         </div>
