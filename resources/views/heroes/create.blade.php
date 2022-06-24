@@ -19,7 +19,7 @@
                                 </div>
                         @endif
                         <!-- Formulaire -->
-                            <form method="POST" action="{{ route('heroes.store') }}">
+                            <form method="POST" action="{{ route('heroes.store') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label>Nom du héro</label>
@@ -44,7 +44,10 @@
                                 <div class=" col-sm-6">
                                         <div class="form-group mb-4">
                                             <label>Photo</label>
-                                            <input type="text" name="photo" class="form-control" placeholder="Copier le lien de votre image">
+                                            <input type="file"
+                                                   name="photo"
+                                                   class="form-control"
+                                                   >
                                         </div>
                                 </div>
                                 <label class="label">Skill</label>

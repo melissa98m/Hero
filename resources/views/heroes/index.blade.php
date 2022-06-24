@@ -44,7 +44,7 @@
                                         @endif
                                         <td>{{$hero->description}}</td>
                                         <td>
-                                            <img src="{{ $hero->photo }}" width="50" height="50" alt="{{ $hero->hero_name }}">
+                                            <img src="{{asset('images/' . $hero->photo) }}" width="50" height="50" alt="{{ $hero->hero_name }}">
                                         </td>
                                         <td>@foreach($hero->universes as $universe)
                                                 {{ $universe->universe_name }}

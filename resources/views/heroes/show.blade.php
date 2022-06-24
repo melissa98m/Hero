@@ -3,7 +3,7 @@
 @section('content')
 
 <h2>{{ $hero->hero_name }}</h2>
-<img src="{{ $hero->photo }}" alt="{{ $hero->hero_name }}">
+<img src="{{asset('images/' . $hero->photo) }}" alt="{{ $hero->hero_name }}">
 
 <p>Genre: {{ $hero->gender }}</p>
 <p><strong>Type de héro</strong>: {{ $hero->type }}</p>

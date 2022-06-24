@@ -41,20 +41,26 @@ class HeroController extends Controller
      */
     public function store(Request $request)
     {
+
+
         $request->validate([
             'hero_name'=>'required',
             'gender'=>'required',
             'type'=>'required',
             'description'=>'required',
-            'photo'=>'required',
+            'photo'=>'required|mimes:jpg,png,jpeg|max:5048',
             'skill_id' => 'required',
         ]);
+        $newImageName = time().'_'.$request->hero_name.'.'.$request->photo->getClientOriginalExtension();
+
+         $request->photo->move(public_path('images'), $newImageName);
+
         $hero = Hero::create([
             'hero_name' => $request->hero_name,
             'gender' => $request->gender,
             'type' => $request->type,
             'description' => $request->description,
-            'photo' => $request->photo,
+            'photo' => $newImageName,
             'skill_id' => $request->skill_id
         ]);
 
@@ -114,6 +120,15 @@ class HeroController extends Controller
             'photo'=>'required',
             'skill_id' => 'required',
         ]);
+
+        if ($image = $request->file('photo')) {
+            $newImageName = time().'_'.$request->hero_name.'.'.$request->photo->getClientOriginalExtension();
+            $image = $request->photo->move(public_path('images'), $newImageName);
+            $updateHero['photo'] = "$newImageName";
+    }else{
+        unset($updateHero['photo']);
+    }
+
         Hero::findOrFail($id)->universes()->sync($request->universes_id);
         Hero::whereId($id)->update($updateHero);
 

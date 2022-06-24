@@ -19,7 +19,7 @@
                                 </div>
                         @endif
                         <!-- Formulaire -->
-                            <form method="POST" action="{{ route('heroes.update', $hero->id) }}">
+                            <form method="POST" action="{{ route('heroes.update', $hero->id) }}" enctype="multipart/form-data">
                                 @csrf
                                 @method('PATCH')
                                 <div class="form-group">
@@ -43,9 +43,15 @@
                                     <input type="text" name="description" class="form-control" width="200px" value="{{ $hero->description }}">
                                 </div>
                                 <div class=" col-sm-6">
-                                    <div class="form-group mb-4">
-                                        <label>Photo</label>
-                                        <input type="text" name="photo" class="form-control" placeholder="Copier le lien de votre image" value="{{ $hero->photo }}">
+                                    <div class=" col-sm-6">
+                                        <div class="form-group mb-4">
+                                            <label>Photo</label>
+                                            <input type="file"
+                                                   name="photo"
+                                                   class="form-control"
+                                                   value="{{ $hero->photo }}"
+                                            >
+                                        </div>
                                     </div>
                                 </div>
                                 <label class="label">Skill</label>

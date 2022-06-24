@@ -19,7 +19,7 @@ class CreateHeroesTable extends Migration
             $table->string('gender');
             $table->string('type');
             $table->string('description');
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->bigInteger('skill_id')->unsigned();
             $table->foreign('skill_id')
                 ->references('id')
